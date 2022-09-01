@@ -1,0 +1,30 @@
+_id: spc_001711ea4314411197138f6d96ee4f53
+type: ApiSpec
+parentId: wrk_6f08938276844b2aa726b7dec4aefe5a
+modified: 1661854461053
+created: 1661850561564
+fileName: anything.yaml
+contents: >-
+  openapi: 3.0.1
+
+  info:
+    title: httpbin.org
+    description: API Management facade for a very handy and free online HTTP tool.
+    version: "1.0"
+  servers:
+
+  - url: http://httpbin.org/
+
+  - url: https://httpbin.org/
+
+  paths:
+    /anything:
+      get:
+        x-kong-plugin-proxy-cache-advanced:
+          enabled: true
+          config:
+            strategy: memory
+        name: Test
+        description: Returns request data, including method used.
+        operationId: /anything1
+contentType: yaml
